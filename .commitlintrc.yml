@@ -1,0 +1,6 @@
+extends:
+  - "@commitlint/config-conventional"
+# rules can be found here: https://commitlint.js.org/#/reference-rules
+rules:
+  header-min-length: [2, "never", 15]
+  header-max-length: [1, "always", 200]

@@ -1,0 +1,1 @@
+import "./acceptance/ssr.mjs";

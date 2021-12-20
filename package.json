@@ -1,0 +1,60 @@
+{
+  "name": "bridge-app",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "Bridge web application.",
+  "private": true,
+  "scripts": {
+    "build": "node build-scripts/build.mjs",
+    "build:skip-i18n": "node build-scripts/build.mjs --skip-i18n",
+    "dev": "node build-scripts/build.mjs --dev",
+    "lint": "eslint \"src/**\" \"build-scripts/**\" \"server/**\" \"test/**\"",
+    "test": "npm run lint && npm run build && npm run test:unit && npm run test:acceptance",
+    "test:quick": "npm run lint && npm run build:skip-i18n && npm run test:unit && npm run test:acceptance",
+    "test:unit": "node test/unit.mjs",
+    "test:acceptance": "node test/acceptance.mjs",
+    "start": "npm run dev",
+    "ssr": "npm run build:skip-i18n && node server/server.mjs",
+    "prepare": "husky install"
+  },
+  "author": "Blockchain Dev",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.13.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "tapdance": "^5.1.1"
+  },
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.1.7",
+    "@ethersproject/providers": "^5.5.0",
+    "@ethersproject/units": "^5.5.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/network-connector": "^6.1.9",
+    "@web3-react/walletconnect-connector": "^6.2.7",
+    "ethers": "^5.5.1",
+    "event-lite": "^0.1.2",
+    "goober": "^2.0.41",
+    "i18next": "^21.3.1",
+    "idb-keyval": "^6.0.2",
+    "mime-types": "^2.1.33",
+    "node-fetch": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.12.0",
+    "valtio": "^1.2.4"
+  },
+  "lint-staged": {
+    "*.{mjs,jsx,js}": "eslint --cache --fix"
+  }
+}

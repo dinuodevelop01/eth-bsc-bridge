@@ -1,0 +1,18 @@
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+
+extends:
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - prettier
+
+rules:
+  no-unused-vars: error
+  react/prop-types: off
+
+settings:
+  react:
+    version: detect
